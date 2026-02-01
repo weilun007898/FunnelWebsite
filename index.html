@@ -110,13 +110,34 @@
         <div class="max-w-4xl mx-auto text-center">
             <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-8">Ready to dominate your local market?</h2>
             <p class="text-xl text-blue-100 mb-12">Join hundreds of successful businesses today. No credit card required.</p>
-            <form action="https://formspree.io/f/xvgzbgww" method="POST" class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
-                <input type="email" name="email" placeholder="Enter your business email" class="flex-1 px-6 py-4 rounded-2xl text-slate-900 font-medium focus:ring-4 focus:ring-blue-400 outline-none" required>
-                <button type="submit" class="px-8 py-4 bg-slate-950 text-white font-bold rounded-2xl hover:bg-slate-900 transition-all">
-                    Get Free Access
-                </button>
-            </form>
+            <div class="max-w-lg mx-auto">
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <input type="email" id="leadEmail" placeholder="Enter your business email" class="flex-1 px-6 py-4 rounded-2xl text-slate-900 font-medium focus:ring-4 focus:ring-blue-400 outline-none" required>
+                    <button onclick="sendLead()" class="px-8 py-4 bg-slate-950 text-white font-bold rounded-2xl hover:bg-slate-900 transition-all">
+                        Get Free Access
+                    </button>
+                </div>
+            </div>
         </div>
+    </section>
+
+    <script>
+        function sendLead() {
+            const emailInput = document.getElementById('leadEmail');
+            const userEmail = emailInput.value;
+            
+            if (!userEmail || !userEmail.includes('@')) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            const subject = encodeURIComponent("New Inquiry from AI Review Hub Funnel");
+            const body = encodeURIComponent("Hello WL,\n\nI am interested in AI Review Hub. My contact email is: " + userEmail);
+            
+            // This will open the user's email client
+            window.location.href = "mailto:weilun007898@gmail.com?subject=" + subject + "&body=" + body;
+        }
+    </script>
     </section>
 
     <!-- Footer -->
