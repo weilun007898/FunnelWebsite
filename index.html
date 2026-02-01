@@ -1,125 +1,189 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Review Hub | Boost Your Business Reputation</title>
+    <title>AI Review Hub | Master Your Local Reputation</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .gradient-text {
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #020617; }
+        .glow-mesh {
+            background-image: radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+                              radial-gradient(at 100% 100%, rgba(236, 72, 153, 0.15) 0px, transparent 50%);
+        }
+        .glass {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .gradient-border {
+            position: relative;
+            border-radius: 24px;
+            background: linear-gradient(to right, #3b82f6, #ec4899);
+            padding: 1px;
+        }
+        .gradient-border > div {
+            background: #020617;
+            border-radius: 23px;
+        }
+        .animate-pulse-slow {
+            animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.8; }
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .animate-float {
-            animation: float 3s ease-in-out infinite;
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-200 overflow-x-hidden">
+<body class="text-slate-200 glow-mesh min-h-screen selection:bg-blue-500/30">
+
+    <!-- Navbar (Minimalist) -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center glass px-6 py-3 rounded-full">
+            <div class="text-xl font-extrabold tracking-tighter text-white flex items-center gap-2">
+                <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">🚀</div>
+                <span>AI Review Hub</span>
+            </div>
+            <a href="#get-started" class="hidden md:block text-sm font-bold bg-white text-black px-5 py-2 rounded-full hover:bg-blue-500 hover:text-white transition-all">Get Started</a>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
-    <header class="relative pt-20 pb-32 px-4">
-        <div class="max-w-6xl mx-auto text-center relative z-10">
-            <div class="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wide text-blue-400 uppercase bg-blue-400/10 rounded-full border border-blue-400/20">
-                New: AI-Powered Reputation Management
+    <section class="relative pt-40 pb-20 px-6 overflow-hidden">
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest mb-8 animate-bounce">
+                ✨ Trusted by Top Malaysian Brands
             </div>
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight">
-                Turn Every Customer into a <span class="gradient-text">5-Star Ambassador</span>
+            <h1 class="text-6xl md:text-8xl font-black mb-8 leading-[1.1] tracking-tight text-gradient">
+                Dominate Google <br> Maps with <span class="text-blue-500">AI.</span>
             </h1>
-            <p class="text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-                Stop losing business to bad reviews. Use AI to help your customers write meaningful, glowing feedback in seconds.
+            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-12 font-medium leading-relaxed">
+                The world's first reputation engine that helps customers write glowing 5-star reviews in under 10 seconds.
             </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#get-started" class="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl transition-all transform hover:scale-105 shadow-lg shadow-blue-500/25">
-                    Start Growing for Free
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                <a href="#get-started" class="group relative px-10 py-5 bg-blue-600 text-white font-bold rounded-2xl transition-all hover:scale-105 active:scale-95 shadow-2xl shadow-blue-500/40">
+                    <span class="relative z-10">Scale My Business Now</span>
+                    <div class="absolute inset-0 bg-white/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </a>
-                <a href="#how-it-works" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-2xl transition-all">
-                    See How It Works
-                </a>
+                <div class="flex items-center gap-3 text-slate-500">
+                    <div class="flex -space-x-2">
+                        <img src="https://i.pravatar.cc/100?u=1" class="w-8 h-8 rounded-full border-2 border-slate-950" />
+                        <img src="https://i.pravatar.cc/100?u=2" class="w-8 h-8 rounded-full border-2 border-slate-950" />
+                        <img src="https://i.pravatar.cc/100?u=3" class="w-8 h-8 rounded-full border-2 border-slate-950" />
+                    </div>
+                    <span class="text-sm font-semibold italic">500+ happy owners</span>
+                </div>
             </div>
         </div>
-        
-        <!-- Background Glow -->
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-96 bg-blue-600/20 blur-[120px] rounded-full -z-0"></div>
-    </header>
 
-    <!-- Social Proof -->
-    <section class="py-12 border-y border-slate-800/50 bg-slate-900/30">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <p class="text-sm font-medium text-slate-500 uppercase tracking-widest mb-8">Trusted by 500+ local businesses in Malaysia</p>
-            <div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-50 grayscale">
-                <span class="text-2xl font-bold italic">RESTAURANTS</span>
-                <span class="text-2xl font-bold italic">CAFE HUB</span>
-                <span class="text-2xl font-bold italic">AUTO SERVICES</span>
-                <span class="text-2xl font-bold italic">BOUTIQUES</span>
-            </div>
-        </div>
+        <!-- Decorative Elements -->
+        <div class="absolute top-40 left-10 w-64 h-64 bg-blue-600/20 blur-[100px] rounded-full animate-pulse-slow"></div>
+        <div class="absolute bottom-10 right-10 w-64 h-64 bg-pink-600/20 blur-[100px] rounded-full animate-pulse-slow"></div>
     </section>
 
-    <!-- Features Section -->
-    <section id="how-it-works" class="py-24 px-4">
+    <!-- Before & After (The Funnel Hook) -->
+    <section class="py-24 px-6">
         <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4">Why Businesses <span class="text-blue-500">Love</span> AI Review Hub</h2>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="p-8 bg-slate-900/50 border border-slate-800 rounded-3xl hover:border-blue-500/50 transition-colors">
-                    <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-6 text-blue-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Instant Generation</h3>
-                    <p class="text-slate-400 leading-relaxed">No more "I don't know what to write." AI creates personalized reviews based on the customer's experience instantly.</p>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <h2 class="text-4xl md:text-5xl font-bold leading-tight">Stop letting silent customers <span class="text-pink-500">kill</span> your growth.</h2>
+                    <p class="text-slate-400 text-lg">90% of happy customers are too busy to write reviews. Only the angry ones make time. We fix that asymmetry.</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-slate-300 font-medium">
+                            <span class="w-6 h-6 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center text-xs">✓</span>
+                            Increase review volume by 400%
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-300 font-medium">
+                            <span class="w-6 h-6 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center text-xs">✓</span>
+                            Boost Google ranking automatically
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-300 font-medium">
+                            <span class="w-6 h-6 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center text-xs">✓</span>
+                            Supports English, Chinese & Malay
+                        </li>
+                    </ul>
                 </div>
-                <!-- Card 2 -->
-                <div class="p-8 bg-slate-900/50 border border-slate-800 rounded-3xl hover:border-blue-500/50 transition-colors">
-                    <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mb-6 text-purple-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
-                        </svg>
+                <div class="gradient-border">
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-8">
+                            <span class="text-xs font-bold text-slate-500 uppercase tracking-tighter">AI Prediction Tool</span>
+                            <div class="flex gap-1">
+                                <div class="w-2 h-2 rounded-full bg-red-500"></div>
+                                <div class="w-2 h-2 rounded-full bg-yellow-500"></div>
+                                <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+                                <div class="text-xs text-blue-400 font-bold mb-1">Old Method</div>
+                                <div class="text-sm italic text-slate-500">"Customer forgot to review..."</div>
+                            </div>
+                            <div class="p-4 rounded-xl bg-blue-600/10 border border-blue-500/30">
+                                <div class="text-xs text-blue-400 font-bold mb-1">AI Review Hub</div>
+                                <div class="text-sm text-white">"✨ This place is amazing! The service was 10/10 and I loved the vibe..."</div>
+                            </div>
+                            <div class="text-center pt-4">
+                                <div class="text-4xl font-bold text-white">+328%</div>
+                                <div class="text-xs text-slate-500 uppercase font-bold tracking-widest mt-1">Growth in 30 Days</div>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Multi-Platform Ready</h3>
-                    <p class="text-slate-400 leading-relaxed">One-tap sharing to Google Maps, Facebook, and Xiaohongshu. Reach your audience wherever they are.</p>
-                </div>
-                <!-- Card 3 -->
-                <div class="p-8 bg-slate-900/50 border border-slate-800 rounded-3xl hover:border-blue-500/50 transition-colors">
-                    <div class="w-12 h-12 bg-pink-500/20 rounded-xl flex items-center justify-center mb-6 text-pink-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04 Pelatih0L12 21.23l7.938-18.261z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Premium Branding</h3>
-                    <p class="text-slate-400 leading-relaxed">Customize your review hub with your own logos, themes, and high-conversion landing pages.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action -->
-    <section id="get-started" class="py-24 px-4 bg-blue-600">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-8">Ready to dominate your local market?</h2>
-            <p class="text-xl text-blue-100 mb-12">Join hundreds of successful businesses today. No credit card required.</p>
-            <div class="max-w-lg mx-auto">
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <input type="email" id="leadEmail" placeholder="Enter your business email" class="flex-1 px-6 py-4 rounded-2xl text-slate-900 font-medium focus:ring-4 focus:ring-blue-400 outline-none" required>
-                    <button onclick="sendLead()" class="px-8 py-4 bg-slate-950 text-white font-bold rounded-2xl hover:bg-slate-900 transition-all">
-                        Get Free Access
+    <!-- Features Grid -->
+    <section class="py-24 px-6 bg-slate-900/20">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+            <div class="glass p-10 rounded-[40px] hover:-translate-y-2 transition-transform">
+                <div class="text-4xl mb-6">🎯</div>
+                <h3 class="text-2xl font-bold mb-4">Hyper-Local</h3>
+                <p class="text-slate-400 leading-relaxed">Tailored specifically for the Malaysian market. We understand local preferences.</p>
+            </div>
+            <div class="glass p-10 rounded-[40px] hover:-translate-y-2 transition-transform">
+                <div class="text-4xl mb-6">⚡</div>
+                <h3 class="text-2xl font-bold mb-4">Lightning Fast</h3>
+                <p class="text-slate-400 leading-relaxed">Zero registration needed for your customers. They scan, they click, they're done.</p>
+            </div>
+            <div class="glass p-10 rounded-[40px] hover:-translate-y-2 transition-transform">
+                <div class="text-4xl mb-6">💎</div>
+                <h3 class="text-2xl font-bold mb-4">White Label</h3>
+                <p class="text-slate-400 leading-relaxed">It's your brand, not ours. Fully customize the UI to match your business aesthetic.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section (The Closer) -->
+    <section id="get-started" class="py-32 px-6">
+        <div class="max-w-4xl mx-auto glass p-12 md:p-20 rounded-[60px] text-center border-t-4 border-blue-600">
+            <h2 class="text-4xl md:text-6xl font-black text-white mb-6">Ready for the 5-Star Wave?</h2>
+            <p class="text-slate-400 text-lg mb-12">Leave your email below. I will personally reach out to show you the magic.</p>
+            
+            <div class="max-w-md mx-auto">
+                <div class="relative group">
+                    <input type="email" id="leadEmail" placeholder="you@company.com" 
+                           class="w-full px-8 py-6 rounded-3xl bg-slate-950 border-2 border-slate-800 text-white font-bold text-lg focus:border-blue-600 outline-none transition-all pr-40 shadow-inner">
+                    <button onclick="sendLead()" class="absolute right-2 top-2 bottom-2 px-6 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl transition-all active:scale-95 shadow-lg shadow-blue-500/20">
+                        Get Started
                     </button>
                 </div>
+                <p class="mt-6 text-xs text-slate-500 font-bold uppercase tracking-widest">⚡ No commitment. No risk. Pure Growth.</p>
             </div>
         </div>
     </section>
+
+    <footer class="py-12 px-6 text-center border-t border-slate-900">
+        <p class="text-slate-600 text-sm font-medium italic">Handcrafted with AI for WL by Kerr 🦾</p>
+    </footer>
 
     <script>
         function sendLead() {
@@ -127,31 +191,16 @@
             const userEmail = emailInput.value;
             
             if (!userEmail || !userEmail.includes('@')) {
-                alert('Please enter a valid email address.');
+                alert('Oops! Please enter a valid email address.');
                 return;
             }
 
-            const subject = encodeURIComponent("New Inquiry from AI Review Hub Funnel");
-            const body = encodeURIComponent("Hello WL,\n\nI am interested in AI Review Hub. My contact email is: " + userEmail);
+            const subject = encodeURIComponent("🚀 NEW LEAD: AI Review Hub Inquiry");
+            const body = encodeURIComponent("Yo WL,\n\nI just saw your amazing funnel and I want in! \n\nMy email: " + userEmail + "\n\nLet's grow together!");
             
-            // This will open the user's email client
             window.location.href = "mailto:weilun007898@gmail.com?subject=" + subject + "&body=" + body;
         }
     </script>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-12 px-4 border-t border-slate-800/50">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="text-xl font-bold gradient-text">AI Review Hub</div>
-            <div class="flex gap-8 text-slate-500 text-sm">
-                <a href="#" class="hover:text-slate-300">Privacy Policy</a>
-                <a href="#" class="hover:text-slate-300">Terms of Service</a>
-                <a href="#" class="hover:text-slate-300">Contact Support</a>
-            </div>
-            <p class="text-slate-600 text-sm">&copy; 2026 AI Review Hub. All rights reserved.</p>
-        </div>
-    </footer>
 
 </body>
 </html>
